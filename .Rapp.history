@@ -1,0 +1,250 @@
+ppois(10,15)
+x <- runif(1000)
+mean(x)
+1/12
+0.5^5
+(0.5^5)*0.5^(1-5)
+choose(5,4)
+choose(5,5)
+(0.5^4)*0.5^(1-4)
+0.5*5+0.5*1
+pbinom(3,size=5,prob=0.5,lower.tail=FALSE)
+choose(5,4)*0.5^5 +choose(8,8)*.5^5
+x <- c(0.61, 0.93, 0.83, 0.35, 0.54, 0.16, 0.91, 0.62, 0.62)
+y <- c(0.67, 0.84, 0.6, 0.18, 0.85, 0.47, 1.1, 0.65, 0.36)
+fit <- lm(y~x)
+coef(fit)
+summary(fit)
+data(mtcars)
+names(mtcars)
+fit <- lm(mpg~wt)
+fit <- with(mtcars,lm(mpg~wt))
+summary(fit)
+fit2 <- with(mtcars,lm(mpg~I(wt-mean(wt))))
+summary(fit2)
+20.0906-qnorm(0.975)* 0.5384
+20.0906-qnorm(0.95)* 0.5384
+20.0906-1.96* 0.5384
+names(mtcars)
+20.0906-1.96* 0.5384/sqrt(30)
+20.0906-qt(0.975,df=29)* 0.5384
+20.0906-qt(0.975,df=30)* 0.5384
+?mtcars
+data.help(mtcars)
+help(mtcars)
+head(mtcars)
+newx <- 3
+coef(fit)[1]+coef(fit)[2]*newx
+predict(fit,newdata=data.frame(wt=newx))
+summary(fit)
+21.25171-qt(0.975,df=30)* 1.8776
+21.25171+qt(0.975,df=30)* 1.8776
+21.25171+qt(0.975,df=31)* 1.8776
+21.25171+qt(0.975,df=30)* 1.8776
+x <- mtcars[,c("mpg","wt")]
+x <- rbind(x,c(21.25171,3))
+fit3 <- lm(mpg~wt,data=x)
+summary(fit3)
+-5.3445 +qt(0.975,df=31)* 0.5496
+-5.3445 -qt(0.975,df=31)* 0.5496
+21.25171+qt(0.975,df=31)* 1.8400
+mean(x$mpg)
+mean(x$mpg)+sd(x$mpg)*qt(0.975,df=31)
+mean(x$mpg)+sd(x$mpg)/sqrt(31)
+mean(x$mpg)+1.96*sd(x$mpg)/sqrt(31)
+mean(x$mpg)+1.96*sd(x$mpg)
+mean(x$mpg)+1.96*sd(x$mpg)/sqrt(30)
+head(mpg)
+head(mtcars)
+max(mtcars)
+max(mtcars$mpg)
+predict(fit,newdata=data.frame(wt=newx),interval=("prediction"))
+fit$interval
+?predict
+predict(fit2,interval=("confidence"))
+predict(fit2,newdata=data.frame(wt=0),interval=("prediction"))
+predict(fit2,newdata=data.frame(wt=0),interval=("confidence"))
+fit4 <- lm(mpg~I(0.5*wt),data=mtcars)
+predict(fit4,newdata=data.frame(wt=0),interval=("confidence"))
+coef(fit4)
+summary(fit4)
+-10.689-qt(0.975,df=30)* 1.118
+summary(fit4)
+fit4 <- lm(mpg~I(0.01*wt),data=mtcars)
+summary(fit4)
+summary(fit)
+fit4 <- lm(mpg~I(wt+3),data=mtcars)
+summary(fit)
+summary(fit4)
+fit4 <- lm(mpg~I(wt-3),data=mtcars)
+summary(fit4)
+e1 <- resid(lm(mpg~1,data=mtcars))
+e2 <- resid(fit)
+y <- e1/e2
+y
+y <- sum(e1^2)/sum(e2^2)
+y
+summary(fit)
+842.85+33.99
+842.85+33.99+336.58
+842.85+33.99+336.58-1307.63
+842.85+33.99+336.58+41819.86
+show
+15*355
+15*355/(4+15*5)
+6*710
+6*710/(4+6*5)
+6*710/(3+6*5)
+4260/3.3
+3.3/4260
+4.75/5325
+15*355/(4+15*.5)
+6*710/(3+6*.5)
+15*355/(4+15*.05)
+6*710/(3+6*.05)
+56.8*4*1.15
+install.packages("caret")
+library(AppliedPredictiveModeling)
+install.packages("AppliedPredictiveModeling")
+library(AppliedPredictiveModeling)
+library(caret)
+data(AlzheimerDisease)
+head(AlzheimerDisease)
+x <- data.frame(diagnosis,predictors)
+y <- data.frame(predictors)
+head(c)
+head(x)
+head(y)
+set.sedd(1000)
+intrain <- createDataPartition(mixtures$CompressiveStrength,p=3/4)[[1]]
+data(concrete)
+intrain <- createDataPartition(mixtures$CompressiveStrength,p=3/4)[[1]]
+trainin=mixtures[intrain,]
+testing=mixtures[-intrain,]
+hist(mixtures$SuperPlasticizer)
+head(mixtures$SuperPlasticizer)
+str(mixtures)
+head(mixtures$Superplasticizer)
+hist(mixtures$Superplasticizer)
+hist(log(mixtures$Superplasticizer))
+min(mixtures$Superplasticizer)
+max(mixtures$Superplasticizer)
+max(mixtures$Superplasticizer+1)
+hist(log(mixtures$Superplasticizer+1))
+adData = data.frame(diagnosis,predictors)
+inTrain = createDataPartition(adData$diagnosis, p = 3/4)[[1]]
+training = adData[ inTrain,]
+testing = adData[-inTrain,]
+str(predictors)
+names(predictors[,57,68])
+x <- (predictors[,57,68])
+names(x)
+head(predictors,1)
+class(predictors)
+class(adData)
+dim(adData)
+x <- adData[,57:68]
+names(x)
+x <- adData[,58:69]
+head(x)
+pre <- preProcess(x,method="pca")
+str(x$diagnosis)
+str(adData)
+x <- adData[,c(1,58:69)]
+modelfit <- train(x$diagnosis~.,method="glm",preProcess="pca",data=x)
+install.packages("e1071")
+modelfit <- train(x$diagnosis~.,method="glm",preProcess="pca",data=x)
+training = x[ inTrain,]
+testing = x[ -inTrain,]
+modelfit <- train(training$diagnosis~.,method="glm",preProcess="pca",data=x)
+inTrain = createDataPartition(x$diagnosis, p = 3/4)[[1]]
+testing = x[ -inTrain,]
+training = x[ inTrain,]
+modelfit <- train(training$diagnosis~.,method="glm",preProcess="pca",data=x)
+modelfit <- train(training$diagnosis~.,method="glm",preProcess="pca",data=training)
+confusionMatrix(testing$diagnosis,predict(modelfit,testing))
+modelfit <- train(training$diagnosis~.,method="glm",preProcess="pca",pcaComp=2,data=training)
+preProc <- preProcess(training,method="pca",pcaComp=2)
+preProc <- preProcess(training[,-1],method="pca",pcaComp=2)
+trainPC <- predict(preProc,training[,-1])
+mdl <- train(training$diagnosis~.,method="glm",data=training)
+testPC <- predict(preProc,testing[,-1])
+confusionMatrix(testing$diagnosis,predict(mdl,testing))
+modelfit <- train(training$diagnosis~.,method="glm",preProcess="pca",pcaComp=5,data=training)
+preProc <- preProcess(training[,-1],method="pca",pcaComp=5)
+trainPC <- predict(preProc,training[,-1])
+mdl <- train(training$diagnosis~.,method="glm",data=training)
+testPC <- predict(preProc,testing[,-1])
+confusionMatrix(testing$diagnosis,predict(mdl,testing))
+preProc <- preProcess(training[,-1],method="pca",thresh=0.9)
+preProc$numComp
+preProc <- preProcess(training[,-1],method="pca",thresh=0.8)
+trainPC <- predict(preProc,training[,-1])
+mdl <- train(training$diagnosis~.,method="glm",data=training)
+testPC <- predict(preProc,testing[,-1])
+confusionMatrix(testing$diagnosis,predict(mdl,testing))
+mdl2 <- train(training$diagnosis~.,method="glm",data=trainPC)
+confusionMatrix(testing$diagnosis,predict(mdl,testPC))
+confusionMatrix(testing$diagnosis,predict(mdl2,testPC))
+preProc <- preProcess(training[,-1],method="pca",thresh=0.8)
+preProc$numComp
+trainPC <- predict(preProc,training[,-1])
+mdl2 <- train(training$diagnosis~.,method="glm",data=trainPC)
+testPC <- predict(preProc,testing[,-1])
+confusionMatrix(testing$diagnosis,predict(mdl2,testPC))
+mdl <- train(training$diagnosis~.,method="glm",data=training)
+confusionMatrix(testing$diagnosis,predict(mdl,testing))
+set.seed(3433)
+inTrain = createDataPartition(x$diagnosis, p = 3/4)[[1]]
+training = x[ inTrain,]
+testing = x[-inTrain,]
+preProc <- preProcess(training[,-1],method="pca",thresh=0.8)
+preProc$numComp
+trainPC <- predict(preProc,training[,-1])
+mdl2 <- train(training$diagnosis~.,method="glm",data=trainPC)
+testPC <- predict(preProc,testing[,-1])
+confusionMatrix(testing$diagnosis,predict(mdl2,testPC))
+mdl <- train(training$diagnosis~.,method="glm",data=training)
+confusionMatrix(testing$diagnosis,predict(mdl,testing))
+library(nlme)
+library(lattice)
+xyplot(weight~Time|Diet,BodyWeight)
+str(Diet)
+Diet
+str(BodyWeight)
+y <- xyplot(weight~Time|Diet,BodyWeight)
+y
+axis()
+axis(1)
+points(BodyWeight$weight)
+lines(BodyWeight$weight)
+panel.abline()
+panel.abline(a=79)
+?par
+?splom
+?trellis.par.set
+?print.trellis
+data(airquality)
+qplot(Wind, Ozone, data = airquality)
+qplot(Wind, Ozone, data = airquality, geom = "smooth")
+airquality = transform(airquality, Month = factor(Month))
+qplot(Wind, Ozone, data = airquality, facets = . ~ Month)
+qplot(Wind, Ozone, data = airquality, facets = . ~ factor(Month))
+?qplot
+g <- ggplot(movies, aes(votes, rating))
+print(g)
+qplot(votes, rating, data = movies)
+qplot(votes, rating, data = movies) + geom_smooth()
+qplot(votes, rating, data = movies, smooth = "loess")
+qplot(votes, rating, data = movies) + stats_smooth("loess")
+qplot(votes, rating, data = movies, panel = panel.loess)
+?qplot
+knit2html
+install.packages("knitr")
+library(knitr)
+knit2html("PA1_template.Rmd","test.html")
+library(lattice)
+?xyplot
+knit2html("PA1_template.Rmd")
+browseURL("PA1_template.html")
+knit2html("PA1_template.Rmd")

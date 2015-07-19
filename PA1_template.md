@@ -1,5 +1,8 @@
 ---
 title: "Reproducible Research Peer Assessment 1"
+output: 
+  html_document:
+    keep_md: true
 ---
 
 ##Loading the data 
@@ -9,15 +12,6 @@ First, we read the data file and store it into "data".
 
 ```r
 data<-read.csv("activity.csv")
-```
-
-```
-## Warning in file(file, "rt"): cannot open file 'activity.csv': No such file
-## or directory
-```
-
-```
-## Error in file(file, "rt"): cannot open the connection
 ```
 
 ##Mean total number of steps taken per day
@@ -147,6 +141,7 @@ with(total2,hist(total2[,2],main="Distribution of total steps",xlab="total steps
 ```
 
 ![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png) 
+
 Let's calculate the mean and the median of the total number of steps taken per day.
 
 ```r
